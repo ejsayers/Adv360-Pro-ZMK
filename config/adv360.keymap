@@ -6,14 +6,14 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define DF 0
-#define DV 1
-#define CO 2
-#define QW 3
-#define ESDF 4
-#define KP 5
-#define FN 6
-#define MOD 7
+#define DF 0    // Dvorak with homerow mods
+#define DV 1    // Dvorak without homerow mods
+#define CO 2    // Colemak
+#define QW 3    // Qwerty
+#define ESDF 4  // Qwerty with left hand shifted so WASD is under home position
+#define KP 5    // Keypad
+#define FN 6    // Function keys
+#define MOD 7   // Modidier keys
 
       //  ╭──────────────────────────────┬──────────────────────────────╮
       //  │  0  1  2  3  4  5  6         |          7  8  9 10 11 12 13 │
@@ -79,21 +79,6 @@
         flavor = "balanced";
         bindings = <&kp>, <&kp>;
         hold-trigger-key-positions = <KEYS_LEFT THUMBS>;
-      };
-
-      bspdl: bspc_del {
-        compatible = "zmk,behavior-mod-morph";
-        label = "BSPC_DEL";
-        #binding-cells = <0>;
-        bindings = <&kp BACKSPACE>, <&kp DELETE>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
-      sptab: space_tab {
-        compatible = "zmk,behavior-mod-morph";
-        label = "SPACE_TAB";
-        #binding-cells = <0>;
-        bindings = <&kp SPACE>, <&kp TAB>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
       };
     };
 
