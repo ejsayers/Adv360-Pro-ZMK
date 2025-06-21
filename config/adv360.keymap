@@ -45,16 +45,6 @@
       };
       #endif
 
-      hm: homerow_mods {
-          compatible = "zmk,behavior-hold-tap";
-          label = "HOMEROW_MODS";
-          #binding-cells = <2>;
-          tapping-term-ms = <500>;
-          quick_tap_ms = <175>;
-          flavor = "balanced";
-          bindings = <&kp>, <&kp>;
-      };
-
        hm_l: homerow_mods_left {
         compatible = "zmk,behavior-hold-tap";
         label = "HOMEROW_MODS_LEFT";
